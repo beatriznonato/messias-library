@@ -37,17 +37,16 @@ As a user **owner**:
 To install in developer mode, follow the step-by-step:
 
 1. Clone the repository on your computer
-    
-    ```sh
-    $ git clone <repository_url>
-    ```
+
+```
+    git clone <repository_url>
+```
     
 2. Access the directory where you downloaded this project and run the [SQL Script](#sql-script) to create the necessary tables in the database
 
 Note: If you decide to rename the tables or attributes, be sure to update the corresponding SQL script in the *BookSaleDAO.java*, *UserLoginDAO.java* and *RentalDAO.java* files located in the dao package inside the src folder. This ensures that the software reflects the renamed information accurately.
 
-3. Configure database connection details. Open the **DBManager.java** file located in the dao package inside the src folder. Replace the existing code with your own database connection details.
-    
+3. Configure database connection details. Open the **DBManager.java** file located in the dao package inside the src folder. Replace the existing code with your own database connection details.  
     
  ```
      connection = DriverManager.getConnection("url", "username", "password");
@@ -68,6 +67,7 @@ CONSTRAINT PK_USERLOGIN PRIMARY KEY (ID_USERLOGIN),
 CONSTRAINT UQ_USERLOGIN_USERNAME UNIQUE (NM_USERNAME)
 );
 
+-- Generate Generic User
 INSERT INTO T_PBL_USERLOGIN (ID_USERLOGIN, NM_USERNAME, DS_PASSWORD) VALUES ('999', 'firstUser', '1234');
 
 -- Table: T_PBL_ORDER_BOOK
@@ -105,6 +105,7 @@ CONSTRAINT PK_RENTAL PRIMARY KEY (ID_RENTAL)
 );
 ```
 
+
 ## How to Run 🕹
 
 1. Export the project as an **executable .jar file** and designate `LoginPage.java` as the startup page.
@@ -115,6 +116,7 @@ CONSTRAINT PK_RENTAL PRIMARY KEY (ID_RENTAL)
  ```
  
 Note: make sure you navigate to the directory where the file is saved and replace `"fileName"` with the actual name of the file.
+
 3. For the first login to the software, use the username and password generic. For security reasons, you must create a new username and password after your first login.
 
  ```
